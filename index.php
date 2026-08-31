@@ -3,42 +3,45 @@
 ?>
     <main>
 
-        <div class="create-note">
+        <div class="create-notes">
 
-            <input type="text" placeholder="Criar uma nota...">
+            <textarea class="note-title" name="title" placeholder="Título" maxlength="40"></textarea> 
+
+            <textarea placeholder="Digite Algo" oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'"></textarea>
+
+            <button type="submit"> Enviar </button> 
 
         </div>
 
-        <article class="note">
+        <section class="notes">
 
-            <div class="note-top">
+            <article class="note">
 
-            <?php foreach($notes as $jorge): ?>
-                <?= $jorge["title"] ?>
-            <?php endforeach; ?>
+                <div class="note-top">
+                    
+                    <p>titulo</p>
 
-                <button> <i class="bi bi-pin-angle"></i> </button>
+                    <button class="pin-btn"> <i class="bi bi-pin-angle"></i> </button>
 
-            </div>
+                </div>
 
-            <?php foreach($notes as $note): ?>
-                <?= $note["note"] ?>
-            <?php endforeach; ?>
+                <div class="note-body">
 
-            <div class="note-footer">
+                    <p>corpo da nota</p>
 
-            <button class="edit-btn">
-                <i class="bi bi-pencil"></i>
-            </button>
-            
-            <button class="delete-btn">
-                <i class="bi bi-trash3"></i>
-            </button>
-            
-            </div>
+                </div>
 
-        </article>
+                <div class="note-footer">
 
+                    <button class="edit-btn"> <i class="bi bi-pencil"></i> </button>
+                    
+                    <button class="delete-btn"> <i class="bi bi-trash3"></i> </button>
+                
+                </div>
+
+            </article>
+
+        </section>
 
     </main>
 <?php

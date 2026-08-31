@@ -13,5 +13,7 @@
 
     $stmt->execute();
 
-    $notes = $stmt->fetchAll();
+    $notes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    print_r($notes);
 ?>
